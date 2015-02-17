@@ -70,6 +70,7 @@ class Identity
 
   key :email, String
   key :name, String
+  key :uid,  String
   key :password_digest, String
 end
 ```

@@ -58,7 +58,7 @@ module OmniAuth
       # methods for each of the attributes it needs in turn, ignoring
       # any for which `#respond_to?` is `false`.
       #
-      # If `first_name`, `nickname`, and/or `last_name` is provided but 
+      # If `first_name`, `nickname`, and/or `last_name` is provided but
       # `name` is not, it will be automatically calculated.
       #
       # @return [Hash] A string-keyed hash of user information.
@@ -70,22 +70,9 @@ module OmniAuth
         info
       end
 
-      # An identifying string that must be globally unique to the
-      # application. Defaults to stringifying the `id` method.
-      #
-      # @return [String] An identifier string unique to this identity.
-      def uid
-        if respond_to?('id')
-          return nil if self.id.nil?
-          self.id.to_s
-        else
-          raise NotImplementedError 
-        end
-      end
-
       # Used to retrieve the user-supplied authentication key (e.g. a
       # username or email). Determined using the class method of the same name,
-      # defaults to `:email`. 
+      # defaults to `:email`.
       #
       # @return [String] An identifying string that will be entered by
       #   users upon sign in.
